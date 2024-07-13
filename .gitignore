@@ -1,0 +1,3 @@
+pyfloorplan/
+model/yolov3.weights
+model/floorplan_model_best.keras

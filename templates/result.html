@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <div>
+        <h2>Detected Objects</h2>
+        <ul>
+            {% for class_name, details in prediction.items() %}
+                <li>{{ class_name }}: {{ details.count }}</li>
+                <ul>
+                    {% for location in details.locations %}
+                        <li>Location - X: {{ location.x }}, Y: {{ location.y }}, Width: {{ location.width }}, Height: {{ location.height }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/">Upload another</a>
+</body>
+</html>
